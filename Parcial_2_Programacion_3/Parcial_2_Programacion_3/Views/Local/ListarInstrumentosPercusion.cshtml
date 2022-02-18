@@ -1,0 +1,31 @@
+﻿@using Parcial_2_Programacion_3.Models;
+@model List<InstrumentoConTipo>
+
+@{
+    ViewBag.Title = "Instrumentos de Percucion";
+}
+
+<h2>Listado de Todos los Instrumentos de Percusion.</h2>
+<table class=table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Stock</th>
+        <th>Precio</th>
+        <th>Tipo</th>
+        <th>Eliminar</th>
+    </tr>
+    @foreach (InstrumentoConTipo a in Model)
+    {
+        <tr>
+            <td>@a.IdInstrumento</td>
+            <td>@a.Nombre</td>
+            <td>@a.Descripcion</td>
+            <td>@a.Stock</td>
+            <td>@a.Precio</td>
+            <td>@a.NombreTipo</td>
+            <td><a href="/Local/Eliminar2/@a.IdInstrumento">Eliminar</a></td>
+        </tr>
+    }
+</table>

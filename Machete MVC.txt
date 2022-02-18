@@ -1,0 +1,19 @@
+var cadenaConexion
+                = "Data Source =172.16.140.13;Initial Catalog=ParcialPro3Manana;User Id = alumno1w1;Password = alumno1w1";
+
+@model Clase
+@model IEnumerable<Clase>
+
+@using Namespace
+
+@foreach(Clase objeto in Model)
+{
+@objeto.propiedad
+}
+
+<form action="" method="post">
+	
+@Html.TextBoxFor(x => x.Atributo)
+@Html.CheckBoxFor(x => x.Atributo))
+@Html.DropDownListFor(x => x.Atributo.Id, 
+new SelectList(Model.Coleccion, "Id", "Nombre"))

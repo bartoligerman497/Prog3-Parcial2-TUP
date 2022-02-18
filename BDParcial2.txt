@@ -1,0 +1,33 @@
+create database CasaMusica
+go
+use CasaMusica
+go
+
+create table tipos
+(
+id int,
+nombre varchar(30)
+constraint pk_tipo primary key (id)
+)
+create table instrumentos
+(
+id int identity(1,1),
+nombre varchar(50),
+descripcion varchar(50),
+stock int,
+precio float(53),
+idTipo int
+constraint pk_instrumentos primary key (id)
+constraint fk_instrumentos_tipos foreign key (idTipo) references tipos (id)
+)
+
+insert into tipos values (1, 'Cuerdas')
+insert into tipos values (2, 'Percusión')
+insert into tipos values (3, 'Vientos')
+insert into tipos values (4, 'Otros')
+
+insert into instrumentos values ('Guitarra MK1', 'Española', 20, 10000, 1)
+insert into instrumentos values ('Fender Squier', 'Electrica stratocaster', 10, 15000,1)
+insert into instrumentos values ('Batería Tama', 'Bateria', 5, 50000, 2)
+insert into instrumentos values ('Batería Pearl','Batería' , 10, 15000,2)
+insert into instrumentos values ('Trompeta', 'Clef', 8, 20000,3)

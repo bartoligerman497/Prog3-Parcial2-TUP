@@ -1,0 +1,38 @@
+﻿@using Parcial_2_Programacion_3.Models;
+@model InstrumentoViewModel
+
+@{
+    ViewBag.Title = "Agregar Instrumento";
+}
+
+<h2>Agregar un Instrumento.</h2>
+
+@using (Html.BeginForm())
+{
+    <table class=table>
+        <tr>
+            <th>Nombre:</th>
+            <td>@Html.TextBoxFor(x => x.instrumento.Nombre)</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>@Html.TextBoxFor(x => x.instrumento.Descripcion)</td>
+        </tr>
+        <tr>
+            <th>Stock:</th>
+            <td>@Html.TextBoxFor(x => x.instrumento.Stock)</td>
+        </tr>
+        <tr>
+            <th>Precio</th>
+            <td>@Html.TextBoxFor(x => x.instrumento.Precio)</td>
+        </tr>
+        <tr>
+            <th>Tipo:</th>
+            <td>@Html.DropDownListFor(x => x.instrumento.IdTipo, new SelectList(@Model.tipos, "idTipo", "nombre"))</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Agregar Instrumento"></td>
+        </tr>
+    </table>
+}
